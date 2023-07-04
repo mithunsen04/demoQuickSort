@@ -1,0 +1,37 @@
+/* .my-carousel {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .my-carousel .carousel-item img {
+    object-fit: cover;
+    max-height: 400px;
+  }
+   */
+
+
+
+
+   .my-carousel {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .my-carousel .carousel-item img {
+    object-fit: cover;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: 25vh;
+    margin: auto;
+  }
+  .carousel-container {
+    height: 50vh;
+    overflow: hidden;
+  }
