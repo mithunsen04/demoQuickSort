@@ -326,7 +326,7 @@ const Footer = () => {
         {/* Add more social media icons here */}
       </Flex>
       <Box mt={2}>
-        &copy; 2023 Your Company Name. All rights reserved.
+        &copy; 2023 QuickSort.AI. All rights reserved.
       </Box>
     </Box>
   );

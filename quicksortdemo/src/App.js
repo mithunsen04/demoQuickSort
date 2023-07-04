@@ -8,11 +8,14 @@ import Offer from './Components/Offer';
 import StartWithAPI from './Components/StartWithAPI';
 import Waitlist from './Components/Waitlist';
   import Footer from './Components/Footer';
+import Home from './Components/Home';
 
 function App() {
   return (
     <div className="App">
       <Navbar/>
+{/* <Home/> */}
+
       <MyCarousel/>
       <About/>
       <Offer/>
