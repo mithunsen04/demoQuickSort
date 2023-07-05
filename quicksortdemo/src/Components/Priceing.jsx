@@ -30,6 +30,10 @@ function PriceWrapper({ children }: { children: ReactNode }) {
 
 export default function Priceing() {
   return (
+    <>
+    <br/>
+    <br/>
+    <br/>
     <Box py={12}>
       <VStack spacing={2} textAlign="center">
         <Heading as="h1" fontSize="4xl">
@@ -202,5 +206,6 @@ export default function Priceing() {
         </PriceWrapper>
       </Stack>
     </Box>
+    </>
   );
 }

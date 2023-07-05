@@ -371,7 +371,7 @@ export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Box bg={useColorModeValue('gray.100', 'gray.900')} px={9} width="100%">
+    <Box bg={useColorModeValue('gray.100', 'gray.900')} px={9} width="100%" pb={'10px'}>
       <Flex h={16} alignItems="center" justifyContent="space-between">
         <HStack
           w={{ base: '100%', md: '42%' }}

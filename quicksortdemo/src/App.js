@@ -9,6 +9,7 @@ import StartWithAPI from './Components/StartWithAPI';
 import Waitlist from './Components/Waitlist';
   import Footer from './Components/Footer';
   import Priceing from './Components/Priceing'
+import CodeEditor from './Components/CodeEditor';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <About/>
       {/* <Offer/> */}
       <StartWithAPI/>
+      <CodeEditor/>
       <Priceing/>
       <Waitlist/>
       <Footer/>
