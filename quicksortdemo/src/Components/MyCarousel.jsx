@@ -32,62 +32,28 @@
 
 
 
-// import React, { useEffect, useState } from 'react';
-// import { Carousel } from 'react-bootstrap';
-// import './MyCarousel.css';
-
-// export default function MyCarousel() {
-//   const [index, setIndex] = useState(0);
-
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setIndex((prevIndex) => (prevIndex + 1) % 3);
-//     }, 3000);
-
-//     return () => {
-//       clearInterval(interval);
-//     };
-//   }, []);
-
-//   return (
-//     <div className="carousel-container">
-//     <Carousel activeIndex={index} onSelect={(selectedIndex) => setIndex(selectedIndex)} interval={null} pause={false}>
-//       <Carousel.Item>
-//         <img
-//           src="https://cdn.analyticsvidhya.com/wp-content/uploads/2021/05/36882NLP-e1595362635214.jpg"
-//           className="d-block w-100"
-//           alt="Slide 1"
-//         />
-//       </Carousel.Item>
-//       <Carousel.Item>
-//         <img
-//           src="https://codesrevolvewordpress.s3.us-west-2.amazonaws.com/revolveai/2022/05/15110810/natural-language-processing-techniques.png"
-//           className="d-block w-100"
-//           alt="Slide 2"
-//         />
-//       </Carousel.Item>
-//       <Carousel.Item>
-//         <img
-//           src="https://storage.googleapis.com/aliz-website-sandbox-strapi-cms/Natural_Language_Processing_03_1_png_1a3c947369/Natural_Language_Processing_03_1_png_1a3c947369.webp"
-//           className="d-block w-100"
-//           alt="Slide 3"
-//         />
-//       </Carousel.Item>
-//     </Carousel>
-//     </div>
-//   );
-// }
-
-// impliment this one -----------------------------------------------------------------------------
-
-import React, { useEffect, useState } from 'react';
-import { Box ,Container} from '@chakra-ui/react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Carousel } from 'react-bootstrap';
 import './MyCarousel.css';
 
-const MyCarousel = () => {
+export default function MyCarousel() {
   const [index, setIndex] = useState(0);
+  const carouselRef = React.useRef(null);
+  const [carouselHeight, setCarouselHeight] = React.useState(0);
 
+  React.useEffect(() => {
+    if (carouselRef.current) {
+      const height = carouselRef.current.clientHeight;
+      setCarouselHeight(height);
+    }
+  }, []);
+  const getImageStyles = () => {
+    return {
+      width: '100%',
+      height: carouselHeight,
+      objectFit: 'cover',
+    };
+  };
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % 3);
@@ -99,42 +65,115 @@ const MyCarousel = () => {
   }, []);
 
   return (
-    
-    
-    <Container maxW='10xl' >
-    <Box className="carousel-container"  >
-      <Carousel activeIndex={index} onSelect={(selectedIndex) => setIndex(selectedIndex)} interval={null} pause={false}>
-        <Carousel.Item>
-          <img
-            src="https://thinkpalm.com/wp-content/uploads/2019/04/BLOG_NLP-FOR-ARTIFICIAL-INTELLIGENCE_72-1.jpg"
-            className="d-block w-100"
-            alt="Slide 1"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            src="https://codesrevolvewordpress.s3.us-west-2.amazonaws.com/revolveai/2022/05/15110810/natural-language-processing-techniques.png"
-            className="d-block w-100"
-            alt="Slide 2"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            src="https://storage.googleapis.com/aliz-website-sandbox-strapi-cms/Natural_Language_Processing_03_1_png_1a3c947369/Natural_Language_Processing_03_1_png_1a3c947369.webp"
-            className="d-block w-100"
-            alt="Slide 3"
-          />
-        </Carousel.Item>
-      </Carousel>
-    </Box>
-    </Container>
-   
+    <div className="carousel-container" ref={carouselRef}>
+    <Carousel activeIndex={index} onSelect={(selectedIndex) => setIndex(selectedIndex)} interval={null} pause={false}>
+      <Carousel.Item>
+        <img
+          src="https://cdn.analyticsvidhya.com/wp-content/uploads/2021/05/36882NLP-e1595362635214.jpg"
+          className="d-block "
+          alt="Slide 1"
+          style={getImageStyles()}
+
+        />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          src="https://codesrevolvewordpress.s3.us-west-2.amazonaws.com/revolveai/2022/05/15110810/natural-language-processing-techniques.png"
+          className="d-block "
+          alt="Slide 2"
+          style={getImageStyles()}
+        />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          src="https://storage.googleapis.com/aliz-website-sandbox-strapi-cms/Natural_Language_Processing_03_1_png_1a3c947369/Natural_Language_Processing_03_1_png_1a3c947369.webp"
+          className="d-block"
+          alt="Slide 3"
+          style={getImageStyles()}
+        />
+      </Carousel.Item>
+    </Carousel>
+    </div>
   );
-};
+}
 
-export default MyCarousel;
+// import React, { useState, useEffect } from 'react';
+// import { Carousel } from 'react-bootstrap';
+
+// const MyCarousel = () => {
+//   const [carouselHeight, setCarouselHeight] = useState(0);
+//   const [index, setIndex] = useState(0);
+//     useEffect(() => {
+//     const interval = setInterval(() => {
+//       setIndex((prevIndex) => (prevIndex + 1) % 3);
+//     }, 3000);
+
+//     return () => {
+//       clearInterval(interval);
+//     };
+//   }, []);
+//   useEffect(() => {
+//     const updateCarouselHeight = () => {
+//       const carouselContainer = document.getElementById('carousel-container');
+//       if (carouselContainer) {
+//         const { height } = carouselContainer.getBoundingClientRect();
+//         setCarouselHeight(height);
+//       }
+//     };
+
+//     updateCarouselHeight();
+//     window.addEventListener('resize', updateCarouselHeight);
+//     return () => {
+//       window.removeEventListener('resize', updateCarouselHeight);
+//     };
+//   }, []);
+
+//   const handleSelect = (selectedIndex) => {
+//     setIndex(selectedIndex);
+//   };
+
+//   return (
+//     <div id="carousel-container" style={{ height: carouselHeight, overflow: 'hidden' }}>
+//       <Carousel activeIndex={index} onSelect={handleSelect} interval={null} pause={false}>
+//         <Carousel.Item>
+//           <img
+//             src="https://cdn.analyticsvidhya.com/wp-content/uploads/2021/05/36882NLP-e1595362635214.jpg"
+//             className="d-block w-100"
+//             alt="Slide 1"
+//             style={{ objectFit: 'cover', height: '100%' }}
+//           />
+//         </Carousel.Item>
+//         <Carousel.Item>
+//           <img
+//             src="https://codesrevolvewordpress.s3.us-west-2.amazonaws.com/revolveai/2022/05/15110810/natural-language-processing-techniques.png"
+//             className="d-block w-100"
+//             alt="Slide 2"
+//             style={{ objectFit: 'cover', height: '100%' }}
+//           />
+//         </Carousel.Item>
+//         <Carousel.Item>
+//           <img
+//             src="https://storage.googleapis.com/aliz-website-sandbox-strapi-cms/Natural_Language_Processing_03_1_png_1a3c947369/Natural_Language_Processing_03_1_png_1a3c947369.webp"
+//             className="d-block w-100"
+//             alt="Slide 3"
+//             style={{ objectFit: 'cover', height: '100%' }}
+//           />
+//         </Carousel.Item>
+//       </Carousel>
+//     </div>
+//   );
+// };
+
+// export default MyCarousel;
 
 
+
+// impliment this one -----------------------------------------------------------------------------
+
+// 
+
+
+//up of the component use for right --------------------------------------------------------------------------
 
 // import React, { useEffect, useState } from 'react';
 // import { Box, Container } from '@chakra-ui/react';
@@ -192,10 +231,6 @@ export default MyCarousel;
 // };
 
 // export default MyCarousel;
-
-
-
-
 
 
 

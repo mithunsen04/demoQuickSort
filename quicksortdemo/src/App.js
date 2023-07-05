@@ -9,7 +9,8 @@ import StartWithAPI from './Components/StartWithAPI';
 import Waitlist from './Components/Waitlist';
   import Footer from './Components/Footer';
   import Priceing from './Components/Priceing'
-import CodeEditor from './Components/CodeEditor';
+import Codeeditor from './Components/CodeEditor';
+// import Signup from './Components/Signup';
 
 
 function App() {
@@ -23,10 +24,11 @@ function App() {
       <About/>
       {/* <Offer/> */}
       <StartWithAPI/>
-      <CodeEditor/>
+      <Codeeditor/>
       <Priceing/>
       <Waitlist/>
       <Footer/>
+      {/* <Signup/> */}
     </div>
   );
 }
