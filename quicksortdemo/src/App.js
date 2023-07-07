@@ -10,25 +10,32 @@ import Waitlist from './Components/Waitlist';
   import Footer from './Components/Footer';
   import Priceing from './Components/Priceing'
 import Codeeditor from './Components/CodeEditor';
-// import Signup from './Components/Signup';
+ import Signup from './Components/Signup';
+import Login from './Components/Login';
 
+import ForgotPassword from './Components/ForgotPassword';
+import ResetPassword from './Components/ResetPassword';
+import Home from './Components/Home';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+     {/* <Home/> */}
 
+     <BrowserRouter>
+     {/* <Navbar/> */}
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
+          <Route path="/resetpassword" element={<ResetPassword />} />
+          {/* <Route path="*" element={<NoPage />} /> */}
+        
+      </Routes>
+    </BrowserRouter>
 
-      <MyCarousel/>
-      
-      <About/>
-      {/* <Offer/> */}
-      <StartWithAPI/>
-      <Codeeditor/>
-      <Priceing/>
-      <Waitlist/>
-      <Footer/>
-      {/* <Signup/> */}
     </div>
   );
 }

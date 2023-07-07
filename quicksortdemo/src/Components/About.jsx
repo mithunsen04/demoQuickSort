@@ -217,15 +217,17 @@ import {
   Stack,
   Text,
   useBreakpointValue,
+  useColorMode,
 } from '@chakra-ui/react';
 
 export default function About() {
+  const { colorMode } = useColorMode();
   return (
     <>
     <br/>
     <br/>
     <br/>
-    <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}  boxShadow={'0 5px 20px 0px rgb(72 187 120 / 43%)'} >
+    <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}  boxShadow={'0 5px 20px 0px rgb(72 187 120 / 43%)'}  bg={colorMode === 'dark' ? 'gray.900' : 'white'} >
       <Flex p={8} flex={1} align={'center'} justify={'center'}>
         <Stack spacing={6} w={'full'} maxW={'lg'}>
           <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
