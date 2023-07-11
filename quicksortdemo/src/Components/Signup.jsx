@@ -131,6 +131,7 @@ import {
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
   import { Link } from 'react-router-dom';
   import axios from 'axios';
+ 
 
 
   export default function Signup() {
@@ -190,6 +191,29 @@ import {
       return firstName.trim() !== '' && lastName.trim() !== '' && email.trim() !== '' && password.trim() !== '';
     };
 
+
+    function getGoogleOAuthURL() {
+      const rooturl = 'https://accounts.google.com/o/oauth2/v2/auth';
+  
+      const options = {
+          redirect_uri: 'http://localhost:8000/google/callback',
+          client_id: '38145906488-qcuhj8ip8cv5vct41b1vk0q3330bte0j.apps.googleusercontent.com',
+          access_type: 'offline',
+          response_type: 'code',
+          scope: [
+              'https://www.googleapis.com/auth/userinfo.profile', 'https://www.googleapis.com/auth/userinfo.email'
+          ].join(" "),
+      
+  
+      }
+      console.log({ options });
+      const qs = new URLSearchParams(options);
+      console.log({ qs });
+      return `${rooturl}?${qs.toString()}`
+  }
+
+
+
   
     return (
       <Flex
@@ -200,7 +224,7 @@ import {
         <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
           <Stack align={'center'}>
             <Heading fontSize={'4xl'} textAlign={'center'}>
-              Sign up
+            Welcome to QuickSort AI
             </Heading>
             <Text fontSize={'lg'} color={'gray.400'}>
               to enjoy all of our cool features ✌️
@@ -209,7 +233,7 @@ import {
           <Box
             rounded={'lg'}
             bg={useColorModeValue('white', 'gray.700')}
-            // boxShadow={'lg'}
+            
             p={8} boxShadow={'0 5px 20px 0px rgb(72 187 120 / 43%)'}>
             <Stack spacing={4}>
               <HStack>
@@ -272,7 +296,7 @@ import {
             )}
 
               <Stack spacing={10} pt={2}>
-                 <Button
+              <Link to="/login"> <Button
                 isLoading={isLoading}
                 loadingText="Submitting"
                 size="lg"
@@ -284,11 +308,21 @@ import {
                 onClick={handleSignup}
                 isDisabled={!validateForm()}
               >
-                <Link to="/login">Sign up</Link>
+                Sign up
                   
 
-                </Button>
+                </Button></Link>
               </Stack>
+              <Button>
+                        
+                      
+                        <a href={getGoogleOAuthURL()} >
+                          <span ></span>
+                          Continue with Google
+                        </a>
+                       </Button>
+
+
               <Stack pt={6}>
                 <Text align={'center'}>
                   Already a user? <Link color={'blue.400'}  to="/login"  >Login</Link>

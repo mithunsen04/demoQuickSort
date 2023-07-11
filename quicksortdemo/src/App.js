@@ -17,6 +17,7 @@ import ForgotPassword from './Components/ForgotPassword';
 import ResetPassword from './Components/ResetPassword';
 import Home from './Components/Home';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import VerifyEmailForm from './Components/VerifyEmailForm';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
           <Route path="/resetpassword" element={<ResetPassword />} />
+          <Route path="/otpverify"  element= {<VerifyEmailForm />} />
           {/* <Route path="*" element={<NoPage />} /> */}
         
       </Routes>

@@ -117,6 +117,11 @@ import {
   
 } from '@chakra-ui/react';
 
+
+
+
+
+
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -203,7 +208,7 @@ export default function Login() {
               <Checkbox>Remember me</Checkbox>
               <Link to="/forgotpassword">Forgot password?</Link>
             </Stack>
-            <Button
+            <Link to="/"><Button
               isLoading={isLoading}
               loadingText="Signing in"
               size="lg"
@@ -216,7 +221,7 @@ export default function Login() {
               isDisabled={!validateForm()}
             >
               Sign in
-            </Button>
+            </Button> </Link>
           </Stack>
         </Stack>
       </Flex>
@@ -230,3 +235,9 @@ export default function Login() {
     </Stack>
   );
 }
+
+
+
+//---------------------------------------------------------------------------------------------------------------
+
+
