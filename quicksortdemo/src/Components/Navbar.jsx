@@ -33,6 +33,7 @@ export default function Navbar() {
       px={9}
       width="100%"
       pb={"10px"}
+      
     >
       <Flex h={16} alignItems="center" justifyContent="space-between">
         <HStack
@@ -44,7 +45,7 @@ export default function Navbar() {
           </Text>
         </HStack>
 
-        <Flex h={16} alignItems="center" justifyContent="space-between">
+        <Flex h={16} alignItems="center" justifyContent="space-between" pr={"20px"}  >
           <HStack
             as="nav"
             spacing={4}
@@ -80,6 +81,22 @@ export default function Navbar() {
                 <b>Contact</b>
               </a>
             </Button>
+
+            <Button
+            backgroundColor="#a891b7"
+            _hover={{ bg: "#a891b7", color: "black" }}
+            color="white"
+            variant="solid"
+            size={["sm", "md"]}
+            id="resumeBtn"
+          >
+            
+            <Link to="/signup">Signup</Link>
+          </Button>
+           
+
+
+
           </HStack>
 
           {/* <IconButton
@@ -88,7 +105,7 @@ export default function Navbar() {
             display={{ base: 'none', md: 'inline-flex' }}
           /> */}
 
-          <Button
+          {/* <Button
             backgroundColor="#a891b7"
             _hover={{ bg: "#a891b7", color: "black" }}
             color="white"
@@ -96,9 +113,9 @@ export default function Navbar() {
             size={["sm", "md"]}
             id="resumeBtn"
           >
-            {/* <a target="_blank" href='/signup'>Sign Up</a> */}
+            
             <Link to="/signup">Signup</Link>
-          </Button>
+          </Button> */}
         </Flex>
 
         <IconButton

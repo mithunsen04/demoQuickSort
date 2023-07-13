@@ -289,7 +289,7 @@ export default function Waitlist() {
   
     try {
       // Send POST request to the signup endpoint
-      const response = await axios.post('http://localhost:8000/', {
+      const response = await axios.post('http://api.quicksort.ai/', {
        name,
         email,
         message,

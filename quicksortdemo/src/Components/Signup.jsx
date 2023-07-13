@@ -123,6 +123,7 @@ import {
     Heading,
     Text,
     useColorModeValue,
+    Center, 
     
   useToast,
     
@@ -131,7 +132,7 @@ import {
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
   import { Link } from 'react-router-dom';
   import axios from 'axios';
- 
+  import { FcGoogle } from 'react-icons/fc';
 
 
   export default function Signup() {
@@ -154,7 +155,7 @@ import {
     
       try {
         // Send POST request to the signup endpoint
-        const response = await axios.post('http://localhost:8000/signup', {
+        const response = await axios.post('http://api.quicksort.ai/signup', {
           firstname: firstName,
           lastname: lastName,
           email,
@@ -196,7 +197,7 @@ import {
       const rooturl = 'https://accounts.google.com/o/oauth2/v2/auth';
   
       const options = {
-          redirect_uri: 'http://localhost:8000/google/callback',
+          redirect_uri: 'http://api.quicksort.ai/google/callback',
           client_id: '38145906488-qcuhj8ip8cv5vct41b1vk0q3330bte0j.apps.googleusercontent.com',
           access_type: 'offline',
           response_type: 'code',
@@ -313,14 +314,35 @@ import {
 
                 </Button></Link>
               </Stack>
-              <Button>
-                        
-                      
-                        <a href={getGoogleOAuthURL()} >
+
+
+
+
+
+                     {/* <Button>
+                       <a href={getGoogleOAuthURL()} >
                           <span ></span>
                           Continue with Google
                         </a>
-                       </Button>
+                       </Button> */}
+
+
+
+<Center>
+<a href={getGoogleOAuthURL()} > <Button
+        w={'full'}
+        maxW={'md'}
+        variant={'outline'}
+        leftIcon={<FcGoogle />}>
+       
+         Continue with Google
+        
+      </Button></a>
+      </Center>
+
+
+
+
 
 
               <Stack pt={6}>

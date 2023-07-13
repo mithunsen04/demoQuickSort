@@ -18,14 +18,15 @@ import ResetPassword from './Components/ResetPassword';
 import Home from './Components/Home';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import VerifyEmailForm from './Components/VerifyEmailForm';
+import Sidebar from './Components/Sidebar.tsx';
 
 function App() {
   return (
     <div className="App">
      {/* <Home/> */}
-
+    {/* <Sidebar/> */}
      <BrowserRouter>
-     {/* <Navbar/> */}
+     
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/login" element={<Login />} />
@@ -33,7 +34,7 @@ function App() {
           <Route path="/forgotpassword" element={<ForgotPassword />} />
           <Route path="/resetpassword" element={<ResetPassword />} />
           <Route path="/otpverify"  element= {<VerifyEmailForm />} />
-          {/* <Route path="*" element={<NoPage />} /> */}
+          
         
       </Routes>
     </BrowserRouter>

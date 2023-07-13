@@ -136,7 +136,7 @@ export default function Login() {
 
     try {
       // Send POST request to the login endpoint
-      const response = await axios.post('http://localhost:8000/login', {
+      const response = await axios.post('http://api.quicksort.ai/login', {
         email,
         password,
       });
