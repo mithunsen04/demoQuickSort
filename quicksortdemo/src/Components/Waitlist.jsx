@@ -289,7 +289,7 @@ export default function Waitlist() {
   
     try {
       // Send POST request to the signup endpoint
-      const response = await axios.post('http://api.quicksort.ai/', {
+      const response = await axios.post('https://alive-jade-hatchling.cyclic.app/', {
        name,
         email,
         message,

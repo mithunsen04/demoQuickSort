@@ -18,12 +18,23 @@ import ResetPassword from './Components/ResetPassword';
 import Home from './Components/Home';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import VerifyEmailForm from './Components/VerifyEmailForm';
-import Sidebar from './Components/Sidebar.tsx';
+//import Sidebar from './Components/Sidebar.tsx';
+
+
+
+
+
+
+
+
+
+
 
 function App() {
   return (
     <div className="App">
      {/* <Home/> */}
+    
     {/* <Sidebar/> */}
      <BrowserRouter>
      
@@ -38,6 +49,31 @@ function App() {
         
       </Routes>
     </BrowserRouter>
+
+
+
+
+
+
+{/* 
+<BrowserRouter>
+      <Sidebar>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+         
+          <Route path="/comment" element={<Comment />} />
+          <Route path="/analytics" element={<Analytics />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/productList" element={<ProductList />} />
+        </Routes>
+      </Sidebar>
+    </BrowserRouter> */}
+
+
+
+
+
 
     </div>
   );

@@ -42,19 +42,97 @@
 //--------------------------------------------------------------
 
 
-import { Box, Flex, Heading, Text, Button, Spacer } from "@chakra-ui/react";
+// import { Box, Flex, Heading, Text, Button, Spacer } from "@chakra-ui/react";
+
+// const ApiKeys = () => {
+//   const apiKeys = [
+//     { id: 1, name: "API Key 1", permissions: "read" },
+//     { id: 2, name: "API Key 2", permissions: "write" },
+//     { id: 3, name: "API Key 3", permissions: "read/write" },
+//   ];
+
+//   return (
+//     <Box p={8} shadow="lg" borderRadius="md" >
+//       <Flex alignItems="center">
+//         <Box mr={4}>
+//           <Heading as="h2" size="lg">
+//             API Keys
+//           </Heading>
+//           <Text fontSize="sm" color="gray.500">
+//             Total Keys: {apiKeys.length}
+//           </Text>
+//         </Box>
+//         <Spacer />
+//         <Button colorScheme="teal" size="sm">
+//           Create Key
+//         </Button>
+//       </Flex>
+//       <Box mt={6} p={4}  borderRadius="md">
+//         <Text fontSize="lg" fontWeight="bold" mb={4}>
+//           Existing Keys
+//         </Text>
+//         <Box>
+//           {apiKeys.map((apiKey) => (
+//             <Flex
+//               key={apiKey.id}
+//               alignItems="center"
+//               justifyContent="space-between"
+//               border={"1px solid gray"}
+//               p={2}
+//               borderRadius="md"
+//               mb={4}
+//               shadow="sm"
+//             >
+//               <Box>
+//                 <Text fontSize="sm" fontWeight="bold">
+//                   {apiKey.name}
+//                 </Text>
+//                 <Text fontSize="sm" color="gray.500">
+//                   Permissions: {apiKey.permissions}
+//                 </Text>
+//               </Box>
+//               <Box >
+//               <Button colorScheme="red" size="sm" marginRight="10px">
+//                 Copy
+//               </Button>
+
+//               <Button colorScheme="red" size="sm">
+//                 Revoke
+//               </Button> </Box>
+//             </Flex>
+//           ))}
+//         </Box>
+//       </Box>
+//     </Box>
+//   );
+// };
+
+// export default ApiKeys;
+
+
+
+
+
+
+//-----------------------------------------------------------------------------------------------------
+
+
+
+
+import React from 'react';
+import { Box, Flex, Heading, Text, Button, Spacer } from '@chakra-ui/react';
 
 const ApiKeys = () => {
   const apiKeys = [
-    { id: 1, name: "API Key 1", permissions: "read" },
-    { id: 2, name: "API Key 2", permissions: "write" },
-    { id: 3, name: "API Key 3", permissions: "read/write" },
+    { id: 1, name: 'API Key 1', permissions: 'read' },
+    { id: 2, name: 'API Key 2', permissions: 'write' },
+    { id: 3, name: 'API Key 3', permissions: 'read/write' },
   ];
 
   return (
-    <Box p={8} shadow="lg" borderRadius="md" >
-      <Flex alignItems="center">
-        <Box mr={4}>
+    <Box p={4} shadow="lg" borderRadius="md" width="100%">
+      <Flex alignItems="center" flexDirection={['column', 'row']} mb={6}>
+        <Box textAlign={['center', 'left']} flex="1">
           <Heading as="h2" size="lg">
             API Keys
           </Heading>
@@ -67,7 +145,7 @@ const ApiKeys = () => {
           Create Key
         </Button>
       </Flex>
-      <Box mt={6} p={4}  borderRadius="md">
+      <Box p={4} borderRadius="md">
         <Text fontSize="lg" fontWeight="bold" mb={4}>
           Existing Keys
         </Text>
@@ -75,15 +153,16 @@ const ApiKeys = () => {
           {apiKeys.map((apiKey) => (
             <Flex
               key={apiKey.id}
-              alignItems="center"
+              alignItems={['center', 'flex-start']}
+              flexDirection={['column', 'row']}
               justifyContent="space-between"
-              border={"1px solid gray"}
+              border="1px solid gray"
               p={2}
               borderRadius="md"
               mb={4}
               shadow="sm"
             >
-              <Box>
+              <Box mb={[2, 0]}>
                 <Text fontSize="sm" fontWeight="bold">
                   {apiKey.name}
                 </Text>
@@ -91,14 +170,14 @@ const ApiKeys = () => {
                   Permissions: {apiKey.permissions}
                 </Text>
               </Box>
-              <Box >
-              <Button colorScheme="red" size="sm" marginRight="10px">
-                Copy
-              </Button>
-
-              <Button colorScheme="red" size="sm">
-                Revoke
-              </Button> </Box>
+              <Box mt={[2, 0]}>
+                <Button colorScheme="red" size="sm" mb={[2, 0]} mr={[0, '10px']}>
+                  Copy
+                </Button>
+                <Button colorScheme="red" size="sm">
+                  Revoke
+                </Button>
+              </Box>
             </Flex>
           ))}
         </Box>
@@ -108,3 +187,8 @@ const ApiKeys = () => {
 };
 
 export default ApiKeys;
+
+
+
+
+

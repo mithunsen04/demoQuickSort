@@ -155,7 +155,7 @@ import {
     
       try {
         // Send POST request to the signup endpoint
-        const response = await axios.post('http://api.quicksort.ai/signup', {
+        const response = await axios.post('https://alive-jade-hatchling.cyclic.app/signup', {
           firstname: firstName,
           lastname: lastName,
           email,
@@ -197,7 +197,7 @@ import {
       const rooturl = 'https://accounts.google.com/o/oauth2/v2/auth';
   
       const options = {
-          redirect_uri: 'http://api.quicksort.ai/google/callback',
+          redirect_uri: 'https://alive-jade-hatchling.cyclic.app/google/callback',
           client_id: '38145906488-qcuhj8ip8cv5vct41b1vk0q3330bte0j.apps.googleusercontent.com',
           access_type: 'offline',
           response_type: 'code',

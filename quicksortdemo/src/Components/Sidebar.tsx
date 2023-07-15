@@ -209,6 +209,8 @@ import Dashboard from './Dashboard';
 import ApiKeys from './ApiKeys';
 import Wallet from './Wallet';
 
+
+
 interface LinkItemProps {
   name: string;
   icon: IconType;
@@ -217,7 +219,7 @@ interface LinkItemProps {
 
 const LinkItems: Array<LinkItemProps> = [
   { name: 'Dashboard', icon: FiHome, component: <Dashboard/>  },
-  { name: 'Playground', icon: FiTrendingUp, component: <Trending /> },
+  { name: 'Playground', icon: FiTrendingUp, component: <div>Playground page </div> },
   { name: 'API Keys', icon: FiCompass, component: <ApiKeys/> },
   { name: 'Wallet', icon: FiStar, component: <Wallet/> },
   { name: 'API Logs', icon: FiSettings, component: <div>Settings Component</div> },
@@ -360,3 +362,23 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
     </Flex>
   );
 }
+
+
+
+//---------------------------------------------------------------------------------------------
+
+
+
+
+
+
+//--------------------------------------------------------------------------------
+
+
+
+
+
+
+
+//---------------------------------------------------------------------
+

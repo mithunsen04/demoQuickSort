@@ -33,6 +33,8 @@ export default function Navbar() {
       px={9}
       width="100%"
       pb={"10px"}
+      position="fixed" // Add this line to make the Navbar fixed
+      zIndex="9999" // Add this line to adjust the stacking order of the Navbar
       
     >
       <Flex h={16} alignItems="center" justifyContent="space-between">
@@ -40,7 +42,7 @@ export default function Navbar() {
           w={{ base: "100%", md: "42%" }}
           justifyContent={{ base: "center", md: "flex-start" }}
         >
-          <Text as="b" fontSize={{ base: "3xl", md: "5xl" }}>
+          <Text as="b" fontSize={{ base: "3xl", md: "5xl" }} color={'orange.400'}>
             QuickSort.AI
           </Text>
         </HStack>
@@ -52,38 +54,38 @@ export default function Navbar() {
             display={{ base: "none", md: "flex" }}
             id="myDIV"
           >
-            <Button className="btnRes">
+            <Button className="btnRes" bg={"#a891b7"}>
               <a href="#Docs">
                 <b>Docs</b>
               </a>
             </Button>
 
-            <Button className="btnRes">
+            <Button className="btnRes" bg={"#a891b7"}>
               <a href="#Playground">
                 <b>Playground</b>
               </a>
             </Button>
 
-            <Button className="btnRes">
+            <Button className="btnRes"  bg={"#a891b7"}>
               <a href="#Pricing">
                 <b>Pricing</b>
               </a>
             </Button>
 
-            <Button className="btnRes">
+            <Button className="btnRes" bg={"#a891b7"}>
               <a href="#Demo">
                 <b>Demo</b>
               </a>
             </Button>
 
-            <Button className="btnRes">
+            <Button className="btnRes" bg={"#a891b7"}>
               <a href="#Contact">
                 <b>Contact</b>
               </a>
             </Button>
 
             <Button
-            backgroundColor="#a891b7"
+           bg={"orange.400"}
             _hover={{ bg: "#a891b7", color: "black" }}
             color="white"
             variant="solid"

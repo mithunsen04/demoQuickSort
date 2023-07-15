@@ -14,6 +14,7 @@ import Login from './Login';
 
 import ForgotPassword from './ForgotPassword';
 import ResetPassword from './ResetPassword';
+import Hero from './Hero';
 
 export default function Home() {
   
@@ -44,8 +45,9 @@ export default function Home() {
      <div>
         <Navbar/>
 
+<Hero/>
 
- <MyCarousel/>
+ {/* <MyCarousel/> */}
 
  <About/>
 {/* <Offer/> */}
