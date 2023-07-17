@@ -26,6 +26,9 @@ import { Link } from "react-router-dom";
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
+  
+  // Retrieve the user name from local storage
+  const userName = localStorage.getItem('userName');
 
   return (
     <Box
@@ -60,11 +63,11 @@ export default function Navbar() {
               </a>
             </Button>
 
-            <Button className="btnRes" bg={"#a891b7"}>
+            <Link to="/playground"><Button className="btnRes" bg={"#a891b7"}>
               <a href="#Playground">
                 <b>Playground</b>
               </a>
-            </Button>
+            </Button></Link>
 
             <Button className="btnRes"  bg={"#a891b7"}>
               <a href="#Pricing">
@@ -72,11 +75,11 @@ export default function Navbar() {
               </a>
             </Button>
 
-            <Button className="btnRes" bg={"#a891b7"}>
+            <Link to="/sidebar"><Button className="btnRes" bg={"#a891b7"}>
               <a href="#Demo">
                 <b>Demo</b>
               </a>
-            </Button>
+            </Button></Link> 
 
             <Button className="btnRes" bg={"#a891b7"}>
               <a href="#Contact">
@@ -84,7 +87,7 @@ export default function Navbar() {
               </a>
             </Button>
 
-            <Button
+            {/* <Button
            bg={"orange.400"}
             _hover={{ bg: "#a891b7", color: "black" }}
             color="white"
@@ -94,8 +97,37 @@ export default function Navbar() {
           >
             
             <Link to="/signup">Signup</Link>
-          </Button>
+          </Button> */}
            
+
+           {userName ? (
+            // Display the user's name instead of the signup button
+            <Button
+              bg={'orange.400'}
+              _hover={{ bg: '#a891b7', color: 'black' }}
+              color="white"
+              variant="solid"
+              size={['sm', 'md']}
+              id="resumeBtn"
+            >
+              Hii, {userName}
+              </Button>
+          ) : (
+            // Display the signup button
+            <Link to="/signup"><Button
+              bg={'orange.400'}
+              _hover={{ bg: '#a891b7', color: 'black' }}
+              color="white"
+              variant="solid"
+              size={['sm', 'md']}
+              id="resumeBtn"
+            >
+             Signup
+            </Button></Link>
+          )}
+
+
+
 
 
 

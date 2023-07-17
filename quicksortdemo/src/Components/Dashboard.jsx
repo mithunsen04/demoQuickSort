@@ -115,7 +115,7 @@ function Dashboard() {
         fontWeight={'bold'}>
         Dashboard:
       </chakra.h1>
-      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }} pr={['0', '20px']}>
+      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }} pr={['0', '20px']} >
         <StatsCard title={'CREDITS'} stat={'0.0488'} />
         <StatsCard title={'API KEYS'} stat={'1'} />
         <StatsCard title={'API HITS'} stat={'5'} />

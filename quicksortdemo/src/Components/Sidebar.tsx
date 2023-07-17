@@ -208,6 +208,7 @@ import Trending from './Trending';
 import Dashboard from './Dashboard';
 import ApiKeys from './ApiKeys';
 import Wallet from './Wallet';
+import Playground from './Playground';
 
 
 
@@ -219,7 +220,7 @@ interface LinkItemProps {
 
 const LinkItems: Array<LinkItemProps> = [
   { name: 'Dashboard', icon: FiHome, component: <Dashboard/>  },
-  { name: 'Playground', icon: FiTrendingUp, component: <div>Playground page </div> },
+  { name: 'Playground', icon: FiTrendingUp, component: <Playground/> },
   { name: 'API Keys', icon: FiCompass, component: <ApiKeys/> },
   { name: 'Wallet', icon: FiStar, component: <Wallet/> },
   { name: 'API Logs', icon: FiSettings, component: <div>Settings Component</div> },
@@ -276,7 +277,7 @@ const SidebarContent = ({ onClose, onLinkItemClick, ...rest }: SidebarProps) => 
       {...rest}
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-        <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
+        <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold" color={'orange.400'}>
           QuickSort AI
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />

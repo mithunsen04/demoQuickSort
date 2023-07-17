@@ -1,24 +1,22 @@
 import React from 'react'
+import { useState } from 'react';
 import Navbar from './Navbar';
-import MyCarousel from './MyCarousel'
+
 import { useEffect } from 'react';
 import About from './About';
-import Offer from './Offer';
+
 import StartWithAPI from './StartWithAPI';
 import Waitlist from './Waitlist';
   import Footer from './Footer';
   import Priceing from './Priceing'
 import Codeeditor from './CodeEditor';
-//  import Signup from './Signup';
-import Login from './Login';
 
-import ForgotPassword from './ForgotPassword';
-import ResetPassword from './ResetPassword';
+
 import Hero from './Hero';
 
 export default function Home() {
   
-
+  const [userName, setUserName] = useState('');
   //searech param ... token availavble or not...
   //if available save the token local storage. 
   // window.reload() reload the page..
@@ -43,23 +41,20 @@ export default function Home() {
 
   return (
      <div>
-        <Navbar/>
+        <Navbar userName={userName} />
 
 <Hero/>
 
- {/* <MyCarousel/> */}
+ 
 
  <About/>
-{/* <Offer/> */}
+
  <StartWithAPI/>
 <Codeeditor/>
 <Priceing/>
 <Waitlist/>
 <Footer/>
-{/* <Signup/> */}
-{/* <Login/> */}
-{/* <ForgotPassword/>
-<ResetPassword/>  */}
+
     </div>
   )
 }

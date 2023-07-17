@@ -117,8 +117,8 @@ import {
   
 } from '@chakra-ui/react';
 
-
-
+import Navbar from './Navbar';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -127,7 +127,9 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [userName, setUserName] = useState('');
   const toast = useToast();
+  let navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -143,11 +145,14 @@ export default function Login() {
 
       console.log(response.data); // Handle the response as needed (e.g., store token, redirect)
 
-      const { token } = response.data; // Extract the token from the response
+      const { token ,  userName  } = response.data; // Extract the token from the response
 
-    // Store the token in localStorage
+    // Store the token and usernem in localStorage
     localStorage.setItem('token', token);
+    localStorage.setItem('userName', userName);
 
+
+    setUserName(userName);
 
     toast({
       title: 'Login up successful',
@@ -162,6 +167,9 @@ export default function Login() {
       // Reset the form
       setEmail('');
       setPassword('');
+
+      navigate('/');
+
     } catch (error) {
       console.error('Error logging in:', error.response?.data?.message || error.message);
       setErrorMessage(error.response?.data?.message || 'An error occurred');
@@ -227,11 +235,12 @@ export default function Login() {
       </Flex>
       <Flex flex={1} boxShadow={'0 5px 20px 0px rgb(72 187 120 / 200%)'}>
         <Image
-          alt={'GIF'}
+          alt={'IMG'}
           objectFit={'cover'}
-          src={'https://cdn.dribbble.com/users/42048/screenshots/8350927/media/23289b76ac7353ad4f0d0619ce6e9f2d.gif'}
+          src={'https://as1.ftcdn.net/v2/jpg/05/97/65/78/1000_F_597657864_WaxxEoZGm9XY3FM53ysPSGZU4qXqRbBg.jpg'}
         />
       </Flex>
+      
     </Stack>
   );
 }

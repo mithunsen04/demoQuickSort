@@ -14,13 +14,15 @@ import Codeeditor from './Components/CodeEditor';
 import Login from './Components/Login';
 
 import ForgotPassword from './Components/ForgotPassword';
-import ResetPassword from './Components/ResetPassword';
+
 import Home from './Components/Home';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import VerifyEmailForm from './Components/VerifyEmailForm';
-//import Sidebar from './Components/Sidebar.tsx';
+import Resetdbpassword from './Components/Resedbtpassword';
 
+import Playground from './Components/Playground';
 
+import Sidebar from './Components/Sidebar.tsx'
 
 
 
@@ -35,20 +37,21 @@ function App() {
     <div className="App">
      {/* <Home/> */}
     
-    {/* <Sidebar/> */}
-     <BrowserRouter>
+    
+      <BrowserRouter>
      
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
-          <Route path="/resetpassword" element={<ResetPassword />} />
+          <Route path="/resetpassword" element={<Resetdbpassword/>} />
           <Route path="/otpverify"  element= {<VerifyEmailForm />} />
-          
+          <Route path="/playground"  element= {<Playground/>} />
+          <Route path="/sidebar"  element= {<Sidebar/>} />
         
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter> 
 
 
 
