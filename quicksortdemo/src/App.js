@@ -22,7 +22,7 @@ import Resetdbpassword from './Components/Resedbtpassword';
 
 import Playground from './Components/Playground';
 
-import Sidebar from './Components/Sidebar.tsx'
+import Sidebar from './Components/Sidebar.jsx'
 
 
 
@@ -49,6 +49,9 @@ function App() {
           <Route path="/otpverify"  element= {<VerifyEmailForm />} />
           <Route path="/playground"  element= {<Playground/>} />
           <Route path="/sidebar"  element= {<Sidebar/>} />
+          <Route path="/pricing"  element= {<Priceing/>} />
+          <Route path="/waitlist"  element= {<Waitlist/>} />
+        
         
       </Routes>
     </BrowserRouter> 

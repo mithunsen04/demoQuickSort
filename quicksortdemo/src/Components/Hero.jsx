@@ -10,16 +10,20 @@ import {
     Button,
     Icon,
     IconProps,
+    Box,
   } from '@chakra-ui/react';
   
   export default function Hero() {
     return (
       <Container maxW={'5xl'}>
+        <Box height={"10px"} >
+
+        </Box>
         <Stack
           textAlign={'center'}
           align={'center'}
-          spacing={{ base: 8, md: 10 }}
-          py={{ base: 20, md: 28 }}>
+          spacing={{ base: 10, md: 10 }}
+          py={{ base: 28, md: 28 }}>
           <Heading
             fontWeight={600}
             fontSize={{ base: '3xl', sm: '4xl', md: '6xl' }}

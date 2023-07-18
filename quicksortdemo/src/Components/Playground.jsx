@@ -524,7 +524,7 @@ function Playground() {
 
   return (
     <ChakraProvider>
-      <Box p={4} maxWidth="800px" margin="0 auto">
+      <Box p={4} maxWidth="1500px" margin="0 auto">
         <Heading as="h1" mb={6} textAlign="center" color={'orange.400'} >
           QuickSort AI Playground
         </Heading>

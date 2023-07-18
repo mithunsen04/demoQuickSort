@@ -112,7 +112,7 @@ function Dashboard() {
         textAlign={'center'}
         fontSize={{ base: '3xl', md: '4xl' }} // Set different font sizes based on screen size
         py={10}
-        fontWeight={'bold'}>
+        fontWeight={'bold'} color={"orange.300"}>
         Dashboard:
       </chakra.h1>
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }} pr={['0', '20px']} >
